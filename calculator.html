@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calsi.css">
+    <title>Caluculator</title>
+    <style>  
+        *{
+            background-color:  black;
+        }
+    .device{
+        height: 400px;
+        width: 300px;
+        background-color: black;
+        margin: 150px 0px 100px 450px;
+        border: 3px rgb(79, 73, 73) solid;
+    
+    }
+    #res{
+        height: 70px;
+        width: 280px;
+        background-color: floralwhite;
+        margin: 8px;
+
+    }
+    .body{
+        margin-top: 1px;
+        text-align: center;
+        background-color: black;
+        
+
+    }
+    .body button{
+        height: 56px;
+        width: 58px;
+        /* padding: 10px; */
+        /* border-radius: 50% ; */
+        
+    }
+    </style>
+</head>
+
+<body>
+    <div class="device">
+        <!-- <div  class="display"> -->
+            <input type="text" id="res">
+        <hr>
+        <div class="body" >
+            <button value = "" onclick = "Clear()" style="color: black; background-color:rgb(219, 212, 212); font-weight:900; " >AC</button>
+            <button value = "" onclick = "Back()" style="color: black; background-color:rgb(219, 212, 212); font-weight:900; " >C</button>
+            <button value = "" onclick = "solve('*')" style="color: black; background-color:rgb(219, 212, 212); font-weight:900;font-size:larger; " >*</button>
+            <button value = "" onclick = "solve('+')" style="color: white;background-color:chocolate;">+</button>
+            <button value = "" onclick = "solve('1')" style="color: white;background-color:rgb(35, 44, 44); ">1</button>
+            <button value = "" onclick = "solve('2')" style="color: white;background-color:rgb(35, 44, 44)">2</button>
+            <button value = "" onclick = "solve('3')" style="color: white;background-color:rgb(35, 44, 44)">3</button>
+            <button value = "" onclick = "solve('-')" style="color: white;background-color:chocolate;">-</button>
+            <button value = "" onclick = "solve('4')" style="color: white;background-color:rgb(35, 44, 44)">4</button>
+            <button value = "" onclick = "solve('5')" style="color: white;background-color:rgb(35, 44, 44)">5</button>
+            <button value = "" onclick = "solve('6')" style="color: white;background-color:rgb(35, 44, 44)">6</button>
+            <button value = "" onclick = "solve('/')" style="color: white;background-color:chocolate;">/</button>
+            <button value = "" onclick = "solve('7')" style="color: white;background-color:rgb(35, 44, 44)">7</button>
+            <button value = "" onclick = "solve('8')" style="color: white;background-color:rgb(35, 44, 44)">8</button>
+            <button value = "" onclick = "solve('9')" style="color: white;background-color:rgb(35, 44, 44)">9</button>
+            <button value = "" onclick = "solve('%')" style="color: white;background-color:chocolate;" >%</button>
+            <button value = "" onclick = "solve('0')" style="color: white;background-color:rgb(35, 44, 44)">0</button>
+            <button value = "" onclick = "solve('00')" style="color: white;background-color:rgb(35, 44, 44)">00</button>
+            <button value = "" onclick = "solve('.')" style="color: white;background-color:rgb(35, 44, 44)">.</button>
+            <button value = "" onclick = "Result()" style="color: white;background-color:chocolate;">=</button>
+
+        </div> 
+    </div>
+
+      //To display values//
+    <script>
+        function solve(val){
+            let v = document.getElementById('res').value += val
+        }
+        function Result() {
+            let exp1 = document.getElementById('res').value
+            let num = eval(exp1)
+            document.getElementById('res').value = num
+        }
+        function Back(){
+            let ev = document.getElementById('res').value
+            ev1 = ev.slice(0,-1)
+            document.getElementById('res').value = ev1
+        }
+        function Clear(){
+            document.getElementById('res').value = ''
+        }
+    </script>
+</body>
+
+</html>
